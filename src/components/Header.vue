@@ -8,6 +8,9 @@
       <li>
         <router-link to="/featured" class="no-deco">Featured</router-link>
       </li>
+      <li>
+        <button onClick="signOut()">ksjdf</button>
+      </li>
     </ul>
   </div>
 </template>
@@ -40,9 +43,6 @@ li {
   padding: 1em;
   margin: 0 auto;
   font-size: 2em;
-}
-
-div {
 }
 
 #logo {
