@@ -2,6 +2,7 @@ import Welcome from './components/Welcome'
 import Featured from './components/Featured'
 import Signin from './components/Signin'
 import MyPets from './components/MyPets'
+import Adopt from './components/Adopt'
 import Merch from './components/Merch'
 
 export default [
@@ -9,5 +10,6 @@ export default [
   { path: '/featured', component: Featured },
   { path: '/signin', component: Signin },
   { path: '/mypets', component: MyPets },
+  { path: '/adopt', component: Adopt },
   { path: '/merch', component: Merch },
 ]
