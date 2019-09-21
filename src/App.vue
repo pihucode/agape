@@ -21,6 +21,12 @@ export default {
   font-family: "Billo";
   src: url("assets/billo.ttf");
 }
+
+@font-face {
+  font-family: "Avenir";
+  src: url("assets/avenir.otf");
+}
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   text-align: center;
