@@ -1,6 +1,5 @@
 <template>
   <div>
-    <p id="blurb">100% of the proceeds towards charities of your choice</p>
     <!-- TODO: should take in data passed from Home.vue -->
     <div class="flex-container">
       <div class="row">
@@ -44,11 +43,5 @@
   flex-direction: row;
   margin: 0 auto;
   margin: 3em;
-}
-
-#blurb {
-  color: #80b7dc;
-  font-size: 1.5em;
-  font-family: "Avenir";
 }
 </style>

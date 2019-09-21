@@ -27,6 +27,7 @@
     }
 
     window.onload = () => {
+      $('.loader').delay(2500).fadeOut(2000);
       gapi.load('auth2', function () {
         gapi.auth2.init();
       });
@@ -40,14 +41,31 @@
       });
     }
   </script>
+
+  <style>
+    .loader {
+      display: block;
+      position: fixed;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      background: #fafafa url("https://media.giphy.com/media/eGsH0JyyQ9dF4jjfuw/giphy.gif") no-repeat center center;
+      text-align: center;
+      color: #999;
+    }
+  </style>
 </head>
 
 <body>
+  <div class="loader"></div>
   <noscript>
     <strong>We're sorry but agape doesn't work properly without JavaScript enabled. Please enable it to
       continue.</strong>
   </noscript>
   <div id="app"></div>
+  <img src="../src/assets/images/egg.png" />
   <!-- built files will be auto injected -->
 </body>
 

@@ -5,7 +5,10 @@
 
     <!-- points -->
     <div>
-      <label>Level {{ level }}</label>
+      <label class="text" id="level">Level {{ level }}</label>
+      <br />
+      <br />
+      <br />
       <span class="levelbar">
         <b-progress
           :value="points"
@@ -19,7 +22,7 @@
 
     <!-- Support Dropdown -->
     <div class="dropdown">
-      <label>Choose a cause to support:</label>
+      <label class="text">Choose a cause to support:</label>
       <v-select
         v-model="selectedCause"
         placeholder="Choose a cause"
@@ -27,8 +30,6 @@
         :options="causeList"
         class="style-chooser"
       ></v-select>
-      <br />
-      <br />
       <br />
       <br />
     </div>
@@ -161,5 +162,15 @@ select {
 .v-select,
 select {
   margin: auto;
+}
+
+.text {
+  color: #4a728c;
+  font-size: 1.5em;
+  font-family: "Avenir";
+}
+
+#level {
+  font-size: 1em;
 }
 </style>
