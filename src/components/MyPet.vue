@@ -27,6 +27,10 @@
         :options="causeList"
         class="style-chooser"
       ></v-select>
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
 
     <ul>
@@ -47,7 +51,18 @@ export default {
 
       // Dropdown
       selectedCause: "",
-      causeList: ["Charity 1", "Charity 2", "Charity 3"],
+      causeList: [
+        "United Way Worldwide",
+        "Feeding America",
+        "Americares Foundation",
+        "Task Force for Global Health",
+        "Salvation Army",
+        "St Jude Children's Research Hospital",
+        "Direct Relief",
+        "Habitat for Humanity International",
+        "Boys & Girls Clubs of America",
+        "YMCA of the USA"
+      ],
       supportList: []
     };
   },
@@ -83,6 +98,10 @@ select {
   font-size: 16px;
   width: 600px;
   // color: $p-text-color;
+}
+
+.dropdown {
+  margin-bottom: 10em;
 }
 
 .v-select,
