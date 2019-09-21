@@ -25,10 +25,10 @@
       ></v-select>
     </div>
 
-    <ul>
-      <li>Charity 0 (test)</li>
-      <li v-for="support in supportList">{{ support }}</li>
-    </ul>
+    <!-- <ul> -->
+      <!-- <li>Charity 0 (test)</li> -->
+      <!-- <li v-for="support in supportList">{{ support }}</li> -->
+    <!-- </ul> -->
   </div>
 </template>
 
