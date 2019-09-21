@@ -14,6 +14,13 @@ export default {
     "app-header": Header
   }
 };
+
+$(document).ready(function() {
+  $("html")
+    .hide(0)
+    .delay(500)
+    .fadeIn(1000);
+});
 </script>
 
 <style lang="scss">
