@@ -39,10 +39,18 @@
 import vSelect from "vue-select";
 export default {
   components: { vSelect },
+  created() {
+    this.currentUsername = localStorage.getItem("username");
+    this.getUser();
+  },
   data() {
     return {
+      // User
+      currentUsername: "",
+
       // Level system
       points: 0,
+      maxExp: 100,
       level: 1,
 
       // Dropdown
@@ -52,6 +60,39 @@ export default {
     };
   },
   methods: {
+    getUser() {
+      this.$http
+        .get(
+          "https://cors-anywhere.herokuapp.com/https://agape-api.herokuapp.com/user/" +
+            this.currentUsername
+        )
+        .then(function(data) {
+          console.log("get response succeeded");
+          if (data.body.username != "not found") {
+            console.log(data);
+            this.supportList = data.body.charities;
+            this.points = data.body.clicks;
+          } else {
+            console.log("else boop");
+          }
+        });
+    },
+    logResult() {
+      this.$http
+        .get(
+          "https://cors-anywhere.herokuapp.com/https://agape-api.herokuapp.com/user/" +
+            this.currentUsername
+        )
+        .then(function(data) {
+          console.log("get response succeeded");
+          if (data.body.username != "not found") {
+            console.log(data);
+            console.log("get clicks: " + data.body.clicks);
+          } else {
+            console.log("else boop");
+          }
+        });
+    },
     addToSupportList: function(selectedCause) {
       // Prevent pushing a duplicate cause
       if (!this.supportList.includes(selectedCause)) {
@@ -60,6 +101,19 @@ export default {
     },
     adoptClicked() {
       this.points++;
+      this.$http
+        .post(
+          "https://cors-anywhere.herokuapp.com/https://agape-api.herokuapp.com/increment/" +
+            this.currentUsername +
+            "/" +
+            this.points
+        )
+        .then(function(data) {
+          console.log("POSTED SUCCESSFULLY");
+          this.logResult();
+          console.log("points: " + this.points);
+          console.log(data);
+        });
     }
   }
 };
