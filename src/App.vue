@@ -18,8 +18,8 @@ export default {
 $(document).ready(function() {
   $("html")
     .hide(0)
-    .delay(500)
-    .fadeIn(1000);
+    .delay(200)
+    .fadeIn(2000);
 });
 </script>
 
