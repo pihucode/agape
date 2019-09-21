@@ -15,7 +15,7 @@
         <router-link to="/merch" class="no-deco">Merch</router-link>
       </li>
       <li>
-        <button onClick="signOut()">ksjdf</button>
+        <p onClick="signOut()" class="no-deco">Logout</p>
       </li>
     </ul>
   </div>
@@ -36,6 +36,10 @@ export default {
 .no-deco {
   text-decoration: none;
   color: #6eb8e0;
+}
+
+p:hover {
+  cursor: pointer;
 }
 
 ul {

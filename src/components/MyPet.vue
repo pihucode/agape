@@ -1,13 +1,11 @@
 <template>
   <div>
-    <h2>My Adopt</h2>
     <!-- adopt -->
     <img v-on:click="adoptClicked()" src="../assets/images/dragon.png" width="450" height="450" />
 
     <!-- points -->
     <div>
       <label>Level {{ level }}</label>
-      <p>{{ points }}</p>
       <span class="levelbar">
         <b-progress
           :value="points"
