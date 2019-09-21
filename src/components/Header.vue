@@ -53,6 +53,7 @@ li {
   padding: 1em;
   margin: 0 auto;
   font-size: 2em;
+  transition: 0.3s ease;
 }
 
 li:hover {
