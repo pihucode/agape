@@ -36,6 +36,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center; /* centers image */
+  background-attachment: fixed;
 }
 
 a {
