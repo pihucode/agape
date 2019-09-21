@@ -1,31 +1,37 @@
 <template>
   <div id="app">
+    <app-header></app-header>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-import Featured from "./components/Featured";
-import Signup from "./components/Signup";
+import Header from "./components/Header";
 
 export default {
   name: "app",
   components: {
-    HelloWorld,
-    featured: Featured,
-    signup: Signup
+    "app-header": Header
   }
 };
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+
+  // background-color: darkgrey;
+  background-image: url(assets/images/background_image.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; /* centers image */
 }
 </style>
