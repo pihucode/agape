@@ -1,17 +1,6 @@
 <template>
   <div>
-    <h2>About</h2>
-    <p>
-      Agape provides a platform and incentive for engaging
-      users in their community.
-      Agape introduces users to global problems and
-      connects users to a cause.
-    </p>
-
-    <h2>Adopt a cause</h2>
-    <p>Here are some causes you could contribute to!</p>
-    <adopt-module></adopt-module>
-    <!-- TODO: add adoptables here -->
+    <img id="about" src="../assets/images/about.png" />
   </div>
 </template>
 
@@ -108,8 +97,11 @@ export default {
 <style scoped>
 div {
   margin: auto;
-  background-color: white;
   width: 50em;
   border-radius: 12%;
+}
+
+#about {
+  width: 100%;
 }
 </style>
