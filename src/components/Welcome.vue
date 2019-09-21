@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <button class="hvr-grow" id="let_go">
       <a href="/mypets" id="play">play</a>
     </button>
@@ -7,12 +8,8 @@
 </template>
 
 <script>
-import AdoptModule from "./AdoptModule";
-
 export default {
-  components: {
-    "adopt-module": AdoptModule
-  },
+  components: {},
   data() {
     return {
       // title: "Sign "
