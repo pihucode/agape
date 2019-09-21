@@ -11,7 +11,7 @@
       <div class="row">
         <img src="../assets/images/sticker1.png" />
         <img src="../assets/images/agapesticker.png" />
-        <img src="../assets/images/hoodie.png" />
+        <img src="../assets/images/egg-stickr.png" />
       </div>
     </div>
   </div>
