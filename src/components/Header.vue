@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h1>Agape</h1>
-    <!-- TODO : logo here -->
+    <img id="logo" src="../assets/logo.png" />
     <ul>
       <li>
         <router-link to="/">Home</router-link>
@@ -40,6 +39,9 @@ li {
 }
 
 div {
-  background-color: paleturquoise;
+}
+
+#logo {
+  height: 10em;
 }
 </style>

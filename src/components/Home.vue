@@ -35,7 +35,7 @@ export default {
 div {
   margin: auto;
   background-color: white;
-  width: 800px;
+  width: 50em;
   border-radius: 12%;
 }
 </style>
