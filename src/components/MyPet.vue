@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>My Adopt</h2>
+    <h2>My Pet</h2>
     <!-- Support Dropdown -->
     <div class="dropdown">
       <label>Choose a cause to support:</label>
@@ -13,10 +13,10 @@
       ></v-select>
     </div>
 
-    <ul>
-      <li>Charity 0 (test)</li>
-      <li v-for="support in supportList">{{ support }}</li>
-    </ul>
+    <!-- <ul> -->
+      <!-- <li>Charity 0 (test)</li> -->
+      <!-- <li v-for="support in supportList">{{ support }}</li> -->
+    <!-- </ul> -->
   </div>
 </template>
 

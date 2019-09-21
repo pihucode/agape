@@ -20,7 +20,6 @@ export default {
 p {
   z-index: 10000;
 }
-
 div {
   position: fixed;
   width: 100%;

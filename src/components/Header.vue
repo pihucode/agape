@@ -3,10 +3,16 @@
     <img id="logo" src="../assets/logo.png" />
     <ul class="bubble-font">
       <li>
-        <router-link to="/mypets" class="no-deco">Home</router-link>
+        <router-link to="/home" class="no-deco">Home</router-link>
       </li>
       <li>
         <router-link to="/featured" class="no-deco">Featured</router-link>
+      </li>
+      <li>
+        <router-link to="/mypet" class="no-deco">My Pet</router-link>
+      </li>
+      <li>
+        <router-link to="/merch" class="no-deco">Merch</router-link>
       </li>
       <li>
         <button onClick="signOut()">ksjdf</button>
