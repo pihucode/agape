@@ -55,6 +55,9 @@ li {
   font-size: 2em;
 }
 
+li:hover {
+  font-size: 3em;
+}
 #logo {
   height: 10em;
 }
