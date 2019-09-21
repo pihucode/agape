@@ -1,15 +1,13 @@
 import Welcome from './components/Welcome'
+import Home from './components/Home'
 import Featured from './components/Featured'
-import Signin from './components/Signin'
-import MyPets from './components/MyPets'
-import Adopt from './components/Adopt'
+import MyPet from './components/MyPet'
 import Merch from './components/Merch'
 
 export default [
   { path: '/', component: Welcome },
+  { path: '/home', component: Home },
   { path: '/featured', component: Featured },
-  { path: '/signin', component: Signin },
-  { path: '/mypets', component: MyPets },
-  { path: '/adopt', component: Adopt },
+  { path: '/mypet', component: MyPet },
   { path: '/merch', component: Merch },
 ]
