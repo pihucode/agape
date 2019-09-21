@@ -9,7 +9,13 @@
       <label>Level {{ level }}</label>
       <p>{{ points }}</p>
       <span class="levelbar">
-        <b-progress :value="points" :max="maxExp" show-value variant="warning" class="w-50 mb-3"></b-progress>
+        <b-progress
+          :value="points"
+          :max="maxExp"
+          show-value
+          variant="warning"
+          class="w-50 mb-3 level-bar"
+        ></b-progress>
       </span>
     </div>
 
@@ -25,10 +31,9 @@
       ></v-select>
     </div>
 
-    <!-- <ul> -->
-      <!-- <li>Charity 0 (test)</li> -->
-      <!-- <li v-for="support in supportList">{{ support }}</li> -->
-    <!-- </ul> -->
+    <ul>
+      <li v-for="support in supportList">{{ support }}</li>
+    </ul>
   </div>
 </template>
 
@@ -64,9 +69,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-.levelbar {
-  padding-left: 90px;
+.level-bar {
+  margin: auto;
 }
+
+// b-progress
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootstrap-vue/src/index.scss";
 
 @import "vue-select/src/scss/vue-select.scss";
 .v-select,
