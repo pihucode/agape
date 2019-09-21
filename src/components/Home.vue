@@ -1,18 +1,5 @@
 <template>
-  <div>
-    <h2>About</h2>
-    <p>
-      Agape provides a platform and incentive for engaging
-      users in their community.
-      Agape introduces users to global problems and
-      connects users to a cause.
-    </p>
-
-    <h2>Adopt a cause</h2>
-    <p>Here are some causes you could contribute to!</p>
-    <adopt-module></adopt-module>
-    <!-- TODO: add adoptables here -->
-  </div>
+  <div></div>
 </template>
 
 <script>
@@ -33,9 +20,15 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 div {
-  margin: auto;
-  background-color: white;
-  width: 50em;
-  border-radius: 12%;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 1000;
+  background-image: url(../assets/images/welcome_page.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; /* centers image */
 }
 </style>

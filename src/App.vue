@@ -28,7 +28,6 @@ body {
   margin: 0;
   height: 100vh;
 
-  // background-color: darkgrey;
   background-image: url(assets/images/background_image.jpg);
   background-size: cover;
   background-repeat: no-repeat;
