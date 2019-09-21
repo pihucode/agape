@@ -8,8 +8,6 @@
 </template>
 
 <script>
-import AdoptModule from "./AdoptModule";
-
 export default {
   components: {},
   data() {
