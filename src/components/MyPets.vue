@@ -34,8 +34,8 @@ export default {
 <style scoped>
 div {
   margin: auto;
-  /* background-color: white; */
-  width: 800px;
+  background-color: white;
+  width: 50em;
   border-radius: 12%;
 }
 </style>

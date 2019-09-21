@@ -1,16 +1,14 @@
 <template>
   <div>
-    <!-- <h1>Agape</h1> -->
-    <!-- TODO : logo here -->
-    <ul>
+    <img id="logo" src="../assets/logo.png" />
+    <ul class="bubble-font">
       <li>
-        <router-link to="/">Home</router-link>
+        <router-link to="/" class="no-deco">Home</router-link>
       </li>
       <li>
-        <router-link to="/featured">Featured</router-link>
+        <router-link to="/featured" class="no-deco">Featured</router-link>
       </li>
     </ul>
-    <p class="slogan">Adopt a cause</p>
   </div>
 </template>
 
@@ -26,6 +24,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+.no-deco {
+  text-decoration: none;
+  color: #6eb8e0;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -33,13 +36,16 @@ ul {
 }
 
 li {
-  display: inline;
-  margin-right: 42px;
-  padding: 12px 24px;
-  // background-color: sandybrown;
+  display: inline-block;
+  padding: 1em;
+  margin: 0 auto;
+  font-size: 2em;
 }
 
-// div {
-//   background-color: paleturquoise;
-// }
+div {
+}
+
+#logo {
+  height: 10em;
+}
 </style>

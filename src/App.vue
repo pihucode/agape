@@ -14,9 +14,20 @@ export default {
     "app-header": Header
   }
 };
+
+$(document).ready(function() {
+  $("html")
+    .hide(0)
+    .delay(500)
+    .fadeIn(1000);
+});
 </script>
 
 <style lang="scss">
+@font-face {
+  font-family: "Billo";
+  src: url("assets/billo.ttf");
+}
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   text-align: center;
@@ -28,10 +39,17 @@ body {
   margin: 0;
   height: 100vh;
 
-  // background-color: darkgrey;
-  background-image: url(assets/images/welcome_page.jpg);
+  background-image: url(assets/images/background_image.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center; /* centers image */
+}
+
+a {
+  text-decoration: none;
+}
+
+.bubble-font {
+  font-family: "Billo";
 }
 </style>
