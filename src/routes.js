@@ -3,6 +3,7 @@ import Featured from './components/Featured'
 import Signin from './components/Signin'
 import MyPets from './components/MyPets'
 import Adopt from './components/Adopt'
+import Merch from './components/Merch'
 
 export default [
   { path: '/', component: Welcome },
@@ -10,4 +11,5 @@ export default [
   { path: '/signin', component: Signin },
   { path: '/mypets', component: MyPets },
   { path: '/adopt', component: Adopt },
+  { path: '/merch', component: Merch },
 ]

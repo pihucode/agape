@@ -14,13 +14,6 @@ export default {
     "app-header": Header
   }
 };
-
-$(document).ready(function() {
-  $("html")
-    .hide(0)
-    .delay(500)
-    .fadeIn(1000);
-});
 </script>
 
 <style lang="scss">
@@ -43,6 +36,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center; /* centers image */
+  background-attachment: fixed;
 }
 
 a {
