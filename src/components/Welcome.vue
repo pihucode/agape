@@ -2,7 +2,7 @@
   <div>
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <button class="hvr-grow" id="let_go">
-      <a href="/mypets" id="play">play</a>
+      <a href="/home" id="play">play</a>
     </button>
   </div>
 </template>
@@ -37,17 +37,14 @@ export default {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
-
 #let_go {
   font-family: "Billo";
   font-size: 6em;
   padding: 0.1em;
 }
-
 #play {
   color: white;
 }
-
 button {
   background-color: #4ea2cf;
   width: 4em;
@@ -59,11 +56,9 @@ button {
   left: 0;
   bottom: 10%;
 }
-
 #let_go:hover {
   cursor: pointer;
 }
-
 div {
   position: fixed;
   width: 100%;
