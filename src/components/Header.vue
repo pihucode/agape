@@ -8,6 +8,9 @@
       <li>
         <router-link to="/featured" class="no-deco">Featured</router-link>
       </li>
+      <li>
+        <router-link to="/merch" class="no-deco">Merch</router-link>
+      </li>
     </ul>
   </div>
 </template>
