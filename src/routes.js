@@ -1,9 +1,9 @@
-import HelloWorld from './components/HelloWorld'
-import Featured from './components/Featured.vue'
-import Signup from './components/Signup.vue'
+import Welcome from './components/Welcome'
+import Featured from './components/Featured'
+import MyPets from './components/MyPets'
 
 export default [
-  { path: '/', component: HelloWorld },
+  { path: '/', component: Welcome },
   { path: '/featured', component: Featured },
-  { path: '/signup', component: Signup },
+  { path: '/mypets', component: MyPets },
 ]
