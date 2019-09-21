@@ -29,7 +29,7 @@ body {
   height: 100vh;
 
   // background-color: darkgrey;
-  background-image: url(assets/images/background_image.jpg);
+  background-image: url(assets/images/welcome_page.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center; /* centers image */

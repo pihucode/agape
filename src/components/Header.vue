@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Agape</h1>
+    <!-- <h1>Agape</h1> -->
     <!-- TODO : logo here -->
     <ul>
       <li>
@@ -39,7 +39,7 @@ li {
   // background-color: sandybrown;
 }
 
-div {
-  background-color: paleturquoise;
-}
+// div {
+//   background-color: paleturquoise;
+// }
 </style>
