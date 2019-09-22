@@ -1,15 +1,15 @@
 <template>
   <div>
     <!-- adopt -->
-    <img v-on:click="adoptClicked()" src="../assets/images/dragon.png" width="450" height="450" />
+    <img id="pet" v-on:click="adoptClicked()" src="../assets/images/dragon.png" />
 
     <!-- points -->
     <div>
       <label class="text" id="level">Level {{ level }}</label>
-      <br />
-      <br />
-      <br />
       <span class="levelbar">
+        <br />
+        <br />
+        <br />
         <b-progress
           :value="points"
           :max="maxExp"
@@ -24,7 +24,7 @@
     <div class="dropdown">
       <label class="text">Choose a cause to support:</label>
       <v-select
-        v-model="selectedCause"
+        v-model="f"
         placeholder="Choose a cause"
         @input="addToSupportList(selectedCause)"
         :options="causeList"
@@ -34,9 +34,14 @@
       <br />
     </div>
 
-    <ul>
-      <li v-for="support in supportList">{{ support }}</li>
-    </ul>
+    <div>
+      <div class="support">
+        <div v-for="support in supportList">
+          {{support}}
+          <!-- <img v-bind:src="`../assets/${support}.png`" /> -->
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -66,10 +71,10 @@ export default {
         "Americares Foundation",
         "Task Force for Global Health",
         "Salvation Army",
-        "St Jude Children's Research Hospital",
+        "St Jude",
         "Direct Relief",
-        "Habitat for Humanity International",
-        "Boys & Girls Clubs of America",
+        "Habitat for Humanity",
+        "Boys & Girls Clubs",
         "YMCA of the USA"
       ],
       supportList: []
@@ -172,5 +177,16 @@ select {
 
 #level {
   font-size: 1em;
+}
+
+.support {
+  background: blue;
+  color: white;
+  width: 1em;
+  text-align: center;
+}
+
+#pet {
+  width: 30%;
 }
 </style>
