@@ -1,8 +1,8 @@
 <template>
   <div>
     <!-- adopt -->
-    <img id="pet" v-on:click="adoptClicked()" src="../assets/images/dragon.png" />
-    <!-- <img id="pet" v-on:click="adoptClicked()" :src="require(`../assets/images/${petImage}.png`)" /> -->
+    <!-- <img id="pet" v-on:click="adoptClicked()" src="../assets/images/dragon.png" /> -->
+    <img id="pet" v-on:click="adoptClicked()" :src="require(`../assets/images/${petImage}.png`)" />
 
     <!-- points -->
     <br />
@@ -58,13 +58,15 @@ export default {
       currentUsername: "",
 
       // Pet
-      petImage: "dragon",
+      petImage: "egg",
+      egg: true,
 
       // Level system
       points: 0,
       displayPoints: 0,
       maxExp: 10,
       level: 1,
+      evolve: 2,
 
       // Dropdown
       selectedCause: "",
@@ -98,6 +100,14 @@ export default {
             this.points = data.body.clicks;
             this.displayPoints = data.body.clicks % this.maxExp;
             this.level = data.body.clicks / 10 - (data.body.clicks % 10) / 10;
+
+            if (this.egg) {
+              console.log("egg");
+              if (this.level > this.evolve) {
+                this.petImage = "dragon";
+                this.egg = false;
+              }
+            }
           } else {
             // console.log("else boop");
           }
@@ -143,7 +153,14 @@ export default {
         });
     },
     adoptClicked() {
-      // this.petImage = "dragon-heart";
+      if (this.egg) {
+        console.log("egg");
+        if (this.level > this.evolve) {
+          this.petImage = "dragon";
+          this.egg = false;
+        }
+      }
+
       this.points++;
       this.displayPoints++;
       if (this.displayPoints == this.maxExp) {
