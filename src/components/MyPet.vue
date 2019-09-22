@@ -2,7 +2,13 @@
   <div>
     <!-- adopt -->
     <!-- <img id="pet" v-on:click="adoptClicked()" src="../assets/images/dragon.png" /> -->
-    <img id="pet" v-on:click="adoptClicked()" :src="require(`../assets/images/${petImage}.png`)" />
+    <img
+      id="pet"
+      @mousedown="mouseDown()"
+      @mouseup="mouseUp()"
+      v-on:click="adoptClicked()"
+      :src="require(`../assets/images/${petImage}.png`)"
+    />
 
     <!-- points -->
     <br />
@@ -169,6 +175,16 @@ export default {
         this.level++;
       }
       this.updatePointsDB();
+    },
+    mouseDown() {
+      if (!this.egg) {
+        this.petImage = "dragon-heart";
+      }
+    },
+    mouseUp() {
+      if (!this.egg) {
+        this.petImage = "dragon";
+      }
     }
   }
 };
