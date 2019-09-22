@@ -11,7 +11,7 @@
       <br />
       <span class="levelbar">
         <b-progress
-          :value="points"
+          :value="displayPoints"
           :max="maxExp"
           show-value
           variant="warning"
@@ -53,9 +53,13 @@ export default {
       // User
       currentUsername: "",
 
+      // Pet
+      petImage: "",
+
       // Level system
       points: 0,
-      maxExp: 100,
+      displayPoints: 0,
+      maxExp: 10,
       level: 1,
 
       // Dropdown
@@ -88,6 +92,7 @@ export default {
             console.log(data);
             this.supportList = data.body.charities;
             this.points = data.body.clicks;
+            this.displayPoints = data.body.clicks % this.maxExp;
           } else {
             console.log("else boop");
           }
@@ -115,8 +120,7 @@ export default {
         this.supportList.push(selectedCause);
       }
     },
-    adoptClicked() {
-      this.points++;
+    updatePointsDB() {
       this.$http
         .post(
           "https://cors-anywhere.herokuapp.com/https://agape-api.herokuapp.com/increment/" +
@@ -130,6 +134,16 @@ export default {
           console.log("points: " + this.points);
           console.log(data);
         });
+    },
+    adoptClicked() {
+      this.points++;
+      this.displayPoints++;
+      if (this.displayPoints == this.maxExp) {
+        //TODO
+        this.displayPoints = 0;
+        this.level++;
+      }
+      this.updatePointsDB();
     }
   }
 };
