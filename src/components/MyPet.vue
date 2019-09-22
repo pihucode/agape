@@ -91,15 +91,15 @@ export default {
             this.currentUsername
         )
         .then(function(data) {
-          console.log("get response succeeded");
+          // console.log("get response succeeded");
           if (data.body.username != "not found") {
-            console.log(data);
+            // console.log(data);
             this.supportList = data.body.charities;
             this.points = data.body.clicks;
             this.displayPoints = data.body.clicks % this.maxExp;
             this.level = data.body.clicks / 10 - (data.body.clicks % 10) / 10;
           } else {
-            console.log("else boop");
+            // console.log("else boop");
           }
         });
     },
@@ -110,20 +110,20 @@ export default {
             this.currentUsername
         )
         .then(function(data) {
-          console.log("get response succeeded");
+          // console.log("get response succeeded");
           if (data.body.username != "not found") {
-            console.log(data);
-            console.log("get clicks: " + data.body.clicks);
+            // console.log(data);
+            // console.log("get clicks: " + data.body.clicks);
           } else {
-            console.log("else boop");
+            // console.log("else boop");
           }
         });
     },
     addToSupportList: function(selectedCause) {
-      console.log("addToSupportList called! ");
+      // console.log("addToSupportList called! ");
       // Prevent pushing a duplicate cause
       if (!this.supportList.includes(selectedCause)) {
-        console.log("support list");
+        // console.log("support list");
         this.supportList.push(selectedCause);
       }
     },
@@ -136,10 +136,10 @@ export default {
             this.points
         )
         .then(function(data) {
-          console.log("POSTED SUCCESSFULLY");
+          // console.log("POSTED SUCCESSFULLY");
           this.logResult();
-          console.log("points: " + this.points);
-          console.log(data);
+          // console.log("points: " + this.points);
+          // console.log(data);
         });
     },
     adoptClicked() {
