@@ -2,13 +2,15 @@
   <div>
     <!-- adopt -->
     <img id="pet" v-on:click="adoptClicked()" src="../assets/images/dragon.png" />
+    <!-- <img id="pet" v-on:click="adoptClicked()" :src="require(`../assets/images/${petImage}.png`)" /> -->
 
     <!-- points -->
+    <br />
     <div>
       <label class="text" id="level">Level {{ level }}</label>
+      <br />
+      <label class="text" id="level">{{ points }} Total Points</label>
       <span class="levelbar">
-        <br />
-        <br />
         <br />
         <b-progress
           :value="displayPoints"
@@ -30,21 +32,14 @@
         :options="causeList"
         class="style-chooser"
       ></v-select>
-      <!-- <br />
-      <br />-->
     </div>
 
-<<<<<<< HEAD
     <div class="charity-list">
       <img
         class="charity-post"
         v-for="support in supportList"
         :src="require(`../assets/${support}.png`)"
       />
-=======
-    <div>
-      <li v-for="support in supportList">{{support}}</li>
->>>>>>> 5a3fb129a96e1bac4f581708fafcf4832fd6b256
     </div>
   </div>
 </template>
@@ -63,7 +58,7 @@ export default {
       currentUsername: "",
 
       // Pet
-      petImage: "",
+      petImage: "dragon",
 
       // Level system
       points: 0,
@@ -102,6 +97,7 @@ export default {
             this.supportList = data.body.charities;
             this.points = data.body.clicks;
             this.displayPoints = data.body.clicks % this.maxExp;
+            this.level = data.body.clicks / 10 - (data.body.clicks % 10) / 10;
           } else {
             console.log("else boop");
           }
@@ -147,6 +143,7 @@ export default {
         });
     },
     adoptClicked() {
+      // this.petImage = "dragon-heart";
       this.points++;
       this.displayPoints++;
       if (this.displayPoints == this.maxExp) {
@@ -181,7 +178,7 @@ select {
 }
 
 .dropdown {
-  margin-bottom: 10em;
+  margin-bottom: 42px;
 }
 
 .v-select,
@@ -204,6 +201,10 @@ select {
 }
 
 #pet {
-  width: 30%;
+  width: 45%;
+}
+
+#pet:hover {
+  cursor: pointer;
 }
 </style>
