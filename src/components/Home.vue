@@ -87,8 +87,8 @@ div {
   padding: 0;
   margin: 0;
   position: relative;
-  bottom: 250px;
-  left: 60vw;
+  bottom: 220;
+  left: 45vw;
 }
 
 .pet {
