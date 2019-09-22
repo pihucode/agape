@@ -24,23 +24,22 @@
     <div class="dropdown">
       <label class="text">Choose a cause to support:</label>
       <v-select
-        v-model="f"
+        v-model="selectedCause"
         placeholder="Choose a cause"
         @input="addToSupportList(selectedCause)"
         :options="causeList"
         class="style-chooser"
       ></v-select>
-      <br />
-      <br />
+      <!-- <br />
+      <br />-->
     </div>
 
-    <div>
-      <div class="support">
-        <div v-for="support in supportList">
-          {{support}}
-          <!-- <img v-bind:src="`../assets/${support}.png`" /> -->
-        </div>
-      </div>
+    <div class="charity-list">
+      <img
+        class="charity-post"
+        v-for="support in supportList"
+        :src="require(`../assets/${support}.png`)"
+      />
     </div>
   </div>
 </template>
@@ -120,8 +119,10 @@ export default {
         });
     },
     addToSupportList: function(selectedCause) {
+      console.log("addToSupportList called! ");
       // Prevent pushing a duplicate cause
       if (!this.supportList.includes(selectedCause)) {
+        console.log("support list");
         this.supportList.push(selectedCause);
       }
     },
@@ -193,11 +194,8 @@ select {
   font-size: 1em;
 }
 
-.support {
-  background: blue;
-  color: white;
-  width: 1em;
-  text-align: center;
+.charity-post {
+  width: 420px;
 }
 
 #pet {
