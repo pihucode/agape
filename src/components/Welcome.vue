@@ -1,26 +1,27 @@
 <template>
-  <div>
+  <div class="bg">
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <!-- <button v-on:click="testIndexMethod()">TEST</button> -->
   </div>
 </template>
 
 <script>
 export default {
-  components: {},
+  created() {
+    console.log("created!");
+    testIndexMethod();
+  },
   data() {
     return {
-      // title: "Sign "
+      //data: value;
     };
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-p {
-  z-index: 10000;
-}
-div {
+<style>
+.bg {
   position: fixed;
   width: 100%;
   height: 100%;

@@ -2,13 +2,15 @@
   <div>
     <!-- adopt -->
     <img id="pet" v-on:click="adoptClicked()" src="../assets/images/dragon.png" />
+    <!-- <img id="pet" v-on:click="adoptClicked()" :src="require(`../assets/images/${petImage}.png`)" /> -->
 
     <!-- points -->
+    <br />
     <div>
       <label class="text" id="level">Level {{ level }}</label>
+      <br />
+      <label class="text" id="level">{{ points }} Total Points</label>
       <span class="levelbar">
-        <br />
-        <br />
         <br />
         <b-progress
           :value="displayPoints"
@@ -30,12 +32,14 @@
         :options="causeList"
         class="style-chooser"
       ></v-select>
-      <!-- <br />
-      <br />-->
     </div>
 
-    <div>
-      <li v-for="support in supportList">{{support}}</li>
+    <div class="charity-list">
+      <img
+        class="charity-post"
+        v-for="support in supportList"
+        :src="require(`../assets/${support}.png`)"
+      />
     </div>
   </div>
 </template>
@@ -54,7 +58,7 @@ export default {
       currentUsername: "",
 
       // Pet
-      petImage: "",
+      petImage: "dragon",
 
       // Level system
       points: 0,
@@ -87,14 +91,15 @@ export default {
             this.currentUsername
         )
         .then(function(data) {
-          console.log("get response succeeded");
+          // console.log("get response succeeded");
           if (data.body.username != "not found") {
-            console.log(data);
+            // console.log(data);
             this.supportList = data.body.charities;
             this.points = data.body.clicks;
             this.displayPoints = data.body.clicks % this.maxExp;
+            this.level = data.body.clicks / 10 - (data.body.clicks % 10) / 10;
           } else {
-            console.log("else boop");
+            // console.log("else boop");
           }
         });
     },
@@ -105,20 +110,20 @@ export default {
             this.currentUsername
         )
         .then(function(data) {
-          console.log("get response succeeded");
+          // console.log("get response succeeded");
           if (data.body.username != "not found") {
-            console.log(data);
-            console.log("get clicks: " + data.body.clicks);
+            // console.log(data);
+            // console.log("get clicks: " + data.body.clicks);
           } else {
-            console.log("else boop");
+            // console.log("else boop");
           }
         });
     },
     addToSupportList: function(selectedCause) {
-      console.log("addToSupportList called! ");
+      // console.log("addToSupportList called! ");
       // Prevent pushing a duplicate cause
       if (!this.supportList.includes(selectedCause)) {
-        console.log("support list");
+        // console.log("support list");
         this.supportList.push(selectedCause);
       }
     },
@@ -131,13 +136,14 @@ export default {
             this.points
         )
         .then(function(data) {
-          console.log("POSTED SUCCESSFULLY");
+          // console.log("POSTED SUCCESSFULLY");
           this.logResult();
-          console.log("points: " + this.points);
-          console.log(data);
+          // console.log("points: " + this.points);
+          // console.log(data);
         });
     },
     adoptClicked() {
+      // this.petImage = "dragon-heart";
       this.points++;
       this.displayPoints++;
       if (this.displayPoints == this.maxExp) {
@@ -172,7 +178,7 @@ select {
 }
 
 .dropdown {
-  margin-bottom: 10em;
+  margin-bottom: 42px;
 }
 
 .v-select,
@@ -195,6 +201,10 @@ select {
 }
 
 #pet {
-  width: 30%;
+  width: 45%;
+}
+
+#pet:hover {
+  cursor: pointer;
 }
 </style>
