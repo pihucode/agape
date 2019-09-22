@@ -35,12 +35,7 @@
     </div>
 
     <div>
-      <div class="support">
-        <div v-for="support in supportList">
-          {{support}}
-          <!-- <img v-bind:src="`../assets/${support}.png`" /> -->
-        </div>
-      </div>
+      <li v-for="support in supportList">{{support}}</li>
     </div>
   </div>
 </template>
@@ -177,13 +172,6 @@ select {
 
 #level {
   font-size: 1em;
-}
-
-.support {
-  background: blue;
-  color: white;
-  width: 1em;
-  text-align: center;
 }
 
 #pet {
