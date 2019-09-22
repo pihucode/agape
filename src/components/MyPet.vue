@@ -34,12 +34,17 @@
       <br />-->
     </div>
 
+<<<<<<< HEAD
     <div class="charity-list">
       <img
         class="charity-post"
         v-for="support in supportList"
         :src="require(`../assets/${support}.png`)"
       />
+=======
+    <div>
+      <li v-for="support in supportList">{{support}}</li>
+>>>>>>> 5a3fb129a96e1bac4f581708fafcf4832fd6b256
     </div>
   </div>
 </template>
