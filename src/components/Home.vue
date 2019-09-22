@@ -1,6 +1,10 @@
 <template>
   <div>
     <img id="about" src="../assets/images/about.png" />
+    <div class="home-img">
+      <img class="icon" src="../assets/images/heart-icon.png" />
+      <img class="pet" src="../assets/images/red-dragon.png" />
+    </div>
   </div>
 </template>
 
@@ -75,5 +79,37 @@ div {
 
 #about {
   width: 100%;
+}
+
+.home-img {
+  width: 400px;
+  height: 400px;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  bottom: 250px;
+  left: 60vw;
+}
+
+.pet {
+  width: 400px;
+}
+
+.icon {
+  width: 100px;
+  animation: MoveUpDown 3s linear infinite;
+  position: absolute;
+  left: -60px;
+  top: 150px;
+}
+
+@keyframes MoveUpDown {
+  0%,
+  100% {
+    top: 0;
+  }
+  50% {
+    top: 60px;
+  }
 }
 </style>

@@ -15,7 +15,7 @@
         <router-link to="/merch" class="no-deco">Merch</router-link>
       </li>
       <li>
-        <p onClick="signOut()" class="no-deco">Logout</p>
+        <p onClick="signOut" class="no-deco">Logout</p>
       </li>
     </ul>
   </div>

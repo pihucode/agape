@@ -16,6 +16,7 @@
   <title>Agape</title>
   <script>
     function onSignIn(googleUser) {
+      console.log("google onSignIn called!");
       var profile = googleUser.getBasicProfile();
       console.log("ID: " + profile.getId()); // Do not send to your backend! Use an ID token instead.
       console.log("Name: " + profile.getName());
@@ -33,12 +34,18 @@
     }
 
     function signOut() {
+      console.log("google signOut called!");
       var auth2 = gapi.auth2.getAuthInstance();
       auth2.signOut().then(function () {
         console.log('User signed out.');
+        localStorage.removeItem("username");
         window.location.replace("https://agapeadopts.herokuapp.com/");
       });
     }
+
+    function testIndexMethod() {
+        console.log("testIndexMethod called!");
+      }
   </script>
 
   <style>
