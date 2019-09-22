@@ -1,14 +1,17 @@
 <template>
   <div>
     <!-- adopt -->
-    <img v-on:click="adoptClicked()" src="../assets/images/dragon.png" width="450" height="450" />
+    <img id="pet" v-on:click="adoptClicked()" src="../assets/images/dragon.png" />
 
     <!-- points -->
     <div>
-      <label>Level {{ level }}</label>
+      <label class="text" id="level">Level {{ level }}</label>
       <span class="levelbar">
+        <br />
+        <br />
+        <br />
         <b-progress
-          :value="points"
+          :value="displayPoints"
           :max="maxExp"
           show-value
           variant="warning"
@@ -19,7 +22,7 @@
 
     <!-- Support Dropdown -->
     <div class="dropdown">
-      <label>Choose a cause to support:</label>
+      <label class="text">Choose a cause to support:</label>
       <v-select
         v-model="selectedCause"
         placeholder="Choose a cause"
@@ -27,15 +30,22 @@
         :options="causeList"
         class="style-chooser"
       ></v-select>
-      <br />
-      <br />
-      <br />
-      <br />
+      <!-- <br />
+      <br />-->
     </div>
 
-    <ul>
-      <li v-for="support in supportList">{{ support }}</li>
-    </ul>
+<<<<<<< HEAD
+    <div class="charity-list">
+      <img
+        class="charity-post"
+        v-for="support in supportList"
+        :src="require(`../assets/${support}.png`)"
+      />
+=======
+    <div>
+      <li v-for="support in supportList">{{support}}</li>
+>>>>>>> 5a3fb129a96e1bac4f581708fafcf4832fd6b256
+    </div>
   </div>
 </template>
 
@@ -52,9 +62,13 @@ export default {
       // User
       currentUsername: "",
 
+      // Pet
+      petImage: "",
+
       // Level system
       points: 0,
-      maxExp: 100,
+      displayPoints: 0,
+      maxExp: 10,
       level: 1,
 
       // Dropdown
@@ -65,10 +79,10 @@ export default {
         "Americares Foundation",
         "Task Force for Global Health",
         "Salvation Army",
-        "St Jude Children's Research Hospital",
+        "St Jude",
         "Direct Relief",
-        "Habitat for Humanity International",
-        "Boys & Girls Clubs of America",
+        "Habitat for Humanity",
+        "Boys & Girls Clubs",
         "YMCA of the USA"
       ],
       supportList: []
@@ -87,6 +101,7 @@ export default {
             console.log(data);
             this.supportList = data.body.charities;
             this.points = data.body.clicks;
+            this.displayPoints = data.body.clicks % this.maxExp;
           } else {
             console.log("else boop");
           }
@@ -109,13 +124,14 @@ export default {
         });
     },
     addToSupportList: function(selectedCause) {
+      console.log("addToSupportList called! ");
       // Prevent pushing a duplicate cause
       if (!this.supportList.includes(selectedCause)) {
+        console.log("support list");
         this.supportList.push(selectedCause);
       }
     },
-    adoptClicked() {
-      this.points++;
+    updatePointsDB() {
       this.$http
         .post(
           "https://cors-anywhere.herokuapp.com/https://agape-api.herokuapp.com/increment/" +
@@ -129,6 +145,16 @@ export default {
           console.log("points: " + this.points);
           console.log(data);
         });
+    },
+    adoptClicked() {
+      this.points++;
+      this.displayPoints++;
+      if (this.displayPoints == this.maxExp) {
+        //TODO
+        this.displayPoints = 0;
+        this.level++;
+      }
+      this.updatePointsDB();
     }
   }
 };
@@ -161,5 +187,23 @@ select {
 .v-select,
 select {
   margin: auto;
+}
+
+.text {
+  color: #4a728c;
+  font-size: 1.5em;
+  font-family: "Avenir";
+}
+
+#level {
+  font-size: 1em;
+}
+
+.charity-post {
+  width: 420px;
+}
+
+#pet {
+  width: 30%;
 }
 </style>
